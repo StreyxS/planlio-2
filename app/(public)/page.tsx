@@ -3,57 +3,13 @@
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { useAuth } from '@/hooks/use-auth'
+import { Hero } from '@/components/hero'
 
 export default function LandingPage() {
   const { user } = useAuth()
   return (
     <main className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-32">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl"></div>
-        </div>
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8">
-              <span className="w-2 h-2 bg-primary rounded-full"></span>
-              <span className="font-sans text-sm font-medium text-primary">AI-Powered Planning</span>
-            </div>
-            <h1 className="font-sans text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-              <span className="text-balance bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                AI Plánování Obsahu<br />
-                Pro Sociální Sítě
-              </span>
-            </h1>
-            <p className="font-sans mt-6 text-lg leading-8 text-muted-foreground sm:text-xl max-w-2xl mx-auto">
-              Automatizujte plánování vašeho obsahu. Použijte AI k vytváření nápadů, plánujte týdny obsahu a spravujte vše na jednom místě.
-            </p>
-            <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-              {user ? (
-                <Link href="/app">
-                  <Button size="lg" className="font-sans w-full sm:w-auto bg-primary hover:bg-primary/90">
-                    Generátor Obsahu
-                  </Button>
-                </Link>
-              ) : (
-                <>
-                  <Link href="/auth/sign-up">
-                    <Button size="lg" className="font-sans w-full sm:w-auto bg-primary hover:bg-primary/90">
-                      Začít 14-denní zkušební lhůtu
-                    </Button>
-                  </Link>
-                  <Link href="#features">
-                    <Button size="lg" variant="outline" className="font-sans w-full sm:w-auto border-primary/30 hover:bg-primary/5">
-                      Zjistit více
-                    </Button>
-                  </Link>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero user={user} />
 
       {/* Features Section */}
       <section id="features" className="px-4 py-20 sm:px-6 lg:px-8 border-t border-border">
