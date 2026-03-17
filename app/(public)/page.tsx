@@ -3,70 +3,13 @@
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { useAuth } from '@/hooks/use-auth'
+import { Hero } from '@/components/hero'
 
 export default function LandingPage() {
   const { user } = useAuth()
   return (
     <main className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-32">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 -z-10">
-          <div 
-            className="absolute inset-0 bg-cover bg-center opacity-30"
-            style={{
-              backgroundImage: 'url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%2017.%203.%202026%2016_37_56-4z48H8CqgP6woCv4lbqBO9eXdJhhDN.png)',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-            }}
-          ></div>
-          {/* Dark overlay for better text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background/90"></div>
-          {/* Decorative blurred elements */}
-          <div className="absolute top-20 right-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="mx-auto max-w-4xl relative z-10">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/40 mb-8 backdrop-blur-sm">
-              <span className="w-2 h-2 bg-primary rounded-full"></span>
-              <span className="font-sans text-sm font-medium text-primary">AI-Powered Planning</span>
-            </div>
-            <h1 className="font-sans text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl drop-shadow-lg">
-              <span className="text-balance bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                AI Plánování Obsahu<br />
-                Pro Sociální Sítě
-              </span>
-            </h1>
-            <p className="font-sans mt-6 text-lg leading-8 text-foreground/90 sm:text-xl max-w-2xl mx-auto drop-shadow-md">
-              Automatizujte plánování vašeho obsahu. Použijte AI k vytváření nápadů, plánujte týdny obsahu a spravujte vše na jednom místě.
-            </p>
-            <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-              {user ? (
-                <Link href="/app">
-                  <Button size="lg" className="font-sans w-full sm:w-auto bg-primary hover:bg-primary/90 shadow-lg">
-                    Generátor Obsahu
-                  </Button>
-                </Link>
-              ) : (
-                <>
-                  <Link href="/auth/sign-up">
-                    <Button size="lg" className="font-sans w-full sm:w-auto bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-lg">
-                      Začít 14-denní zkušební lhůtu
-                    </Button>
-                  </Link>
-                  <Link href="#features">
-                    <Button size="lg" variant="outline" className="font-sans w-full sm:w-auto border-foreground/30 hover:bg-foreground/5 bg-background/50 backdrop-blur-sm">
-                      Zjistit více
-                    </Button>
-                  </Link>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero user={user} />
 
       {/* Features Section */}
       <section id="features" className="px-4 py-20 sm:px-6 lg:px-8 border-t border-border">
