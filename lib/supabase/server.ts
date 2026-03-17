@@ -41,8 +41,3 @@ export async function createClient() {
   )
 }
 
-        },
-      },
-    },
-  )
-}
