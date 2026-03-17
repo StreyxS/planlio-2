@@ -1,0 +1,58 @@
+/* Custom gradient utilities for vibrant design */
+@layer utilities {
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .gradient-accent {
+    @apply bg-gradient-to-r from-primary to-accent;
+  }
+
+  .gradient-text-primary {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .gradient-text-accent {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  .card-vibrant {
+    @apply bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20 hover:border-primary/50 transition-all;
+  }
+
+  .btn-vibrant {
+    @apply bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground;
+  }
+
+  .btn-vibrant-outline {
+    @apply border border-primary/50 hover:bg-primary/5 hover:border-primary/100;
+  }
+
+  .badge-platform-instagram {
+    @apply bg-gradient-to-r from-pink-500 to-rose-500;
+  }
+
+  .badge-platform-facebook {
+    @apply bg-gradient-to-r from-blue-500 to-blue-600;
+  }
+
+  .badge-platform-youtube {
+    @apply bg-gradient-to-r from-red-500 to-rose-600;
+  }
+
+  .badge-platform-tiktok {
+    @apply bg-gradient-to-r from-gray-900 to-gray-800;
+  }
+
+  .badge-platform-linkedin {
+    @apply bg-gradient-to-r from-blue-700 to-blue-800;
+  }
+
+  .glow-primary {
+    @apply shadow-lg shadow-primary/20;
+  }
+
+  .glow-accent {
+    @apply shadow-lg shadow-accent/20;
+  }
+}
